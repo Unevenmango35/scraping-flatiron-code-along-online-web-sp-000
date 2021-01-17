@@ -14,7 +14,7 @@ class Scraper
       self.get_page.css(".post")
     end
 
-    def make_courses
+    def make_courses #iterate over the collection and make a new instance of Course class for each one while assigning it the appropriate attributes
       self.get_courses.each do |post|
         course = Course.new
         course.title = post.css("h2").text
